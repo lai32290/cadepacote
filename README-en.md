@@ -1,3 +1,5 @@
+Languages: English  [Portuguese](README.md)
+
 # Description
 
 `cadepacote` is a NodeJS package, for consult Brazil mail package in a fast and simple way, directly with Terminal.
