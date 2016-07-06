@@ -2,10 +2,10 @@
   "name": "cadepacote",
   "version": "1.0.5",
   "description": "cadepacote serve para rastrear pacote no correio",
-  "main": "bin/cli",
+  "main": "bin/cadepacote",
   "preferGlobal": true,
   "bin": {
-    "cadepacote": "./bin/cli"
+    "cadepacote": "./bin/cadepacote"
   },
   "dependencies": {
     "cheerio": "^0.20.0",
