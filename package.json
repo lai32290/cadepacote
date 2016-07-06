@@ -1,6 +1,6 @@
 {
   "name": "cadepacote",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "cadepacote serve para rastrear pacote no correio",
   "main": "bin/cadepacote",
   "preferGlobal": true,
