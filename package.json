@@ -1,34 +1,34 @@
 {
-    "name": "cadepacote",
-    "version": "1.0.2",
-    "description": "cadepacote serve para rastrear pacote no correio",
-    "main": "bin/cli",
-    "preferGlobal" : true,
-    "bin": {
-        "cadepacote" : "./bin/cli"
-    },
-    "dependencies": {
-        "cheerio": "^0.20.0",
-        "cli-table": "^0.3.1",
-        "commander": "^2.9.0",
-        "better-console": "^0.2.4",
-        "nightmare": "^2.5.2"
-    },
-    "devDependencies": {},
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/lai32290/cadepacote.git"
-    },
-    "keywords": [
-        "cli"
-    ],
-    "author": "Lai",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/lai32290/cadepacote/issues"
-    },
-    "homepage": "https://github.com/lai32290/cadepacote#readme"
+  "name": "cadepacote",
+  "version": "1.0.3",
+  "description": "cadepacote serve para rastrear pacote no correio",
+  "main": "bin/cli",
+  "preferGlobal": true,
+  "bin": {
+    "cadepacote": "./bin/cli"
+  },
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "cli-table": "^0.3.1",
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "nightmare": "^2.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lai32290/cadepacote.git"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "Lai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lai32290/cadepacote/issues"
+  },
+  "homepage": "https://github.com/lai32290/cadepacote#readme"
 }
