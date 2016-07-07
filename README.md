@@ -4,6 +4,8 @@ Languages: [English](README-en.md)  Portuguese
 
 `cadepacote` é um pacote de NodeJS, feito para consultar pacote de Correios de uma forma rápida e simples diretamente pelo Terminal.
 
+![cadepacote](img/example.jpg)
+
 # Instalar
 
 Instale o pacote globalmente:
