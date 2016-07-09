@@ -32,3 +32,7 @@ $ cadepacote PJ123456789BR -v
 
 - `-v` = Verbose
 - `-r` = Reverter itens da lista
+
+## Suporte
+
+Node v4.x
