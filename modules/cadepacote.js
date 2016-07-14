@@ -1,45 +1,13 @@
 'use strict';
 
-var program = require('commander')
-	, pkg = require('../package.json')
-	, cheerio = require('cheerio')
+var cheerio = require('cheerio')
 	, Nightmare = require('nightmare')
-	, cliTable = require('cli-table')
-	, colors = require('colors')
 	, nightmare = Nightmare({show: false})
 	;
 
 var correiosURL = 'http://www2.correios.com.br/sistemas/rastreamento/default.cfm';
-var code = '';
 
-program
-	.version(pkg.version)
-	.option('-r, --reverse', 'Reverse event list')
-	.option('-v, --verbose', 'Show process message')
-	.usage("<codigo>")
-	.action(function (codigo) {
-		code = codigo;
-	})
-	.parse(process.argv);
-
-if(code == undefined || code == '') {
-	program.outputHelp();
-	return;
-}
-
-if(program.verbose) console.log('Buscando resultados...');
-getWPackageResult(code, function(result) {
-	if(result.status == 'ERROR') {
-		console.log('Código inválido');
-		return;
-	}
-
-	var events = getEvents(result);
-
-	printResult(events);
-});
-
-function getWPackageResult(packageCode, callback) {
+function getPackage(packageCode, callback) {
 	nightmare
 		.goto(correiosURL)
 		.evaluate(function(packageCode) {
@@ -63,24 +31,17 @@ function getWPackageResult(packageCode, callback) {
 		})
 	    .end()
 	    .then(function(result) {
+
+	    	var result = result;
+	    	if(result['status'] != 'ERROR')
+	    		result = getEvents(result);
+
 	    	if(callback !== undefined)
 	    		callback(result);
 	    })
 	    .catch(function(error) {
 	        console.error('Search failed:', error);
 	    });
-}
-
-function printResult(results) {
-	var data = JSON.parse(JSON.stringify(results)).reverse();
-
-	if(program.reverse) data = data.reverse();
-
-	data.forEach(function(item) {
-		console.log((item.date + '    ' + item.time + '    ' + item.local).underline);
-		console.log('Status: ' + item.status.green);
-		console.log('');
-	});
 }
 
 function getEvents(html) {
@@ -104,3 +65,7 @@ function getEvents(html) {
 
 	return events;
 }
+
+module.exports = {
+	getPackage: getPackage
+};
