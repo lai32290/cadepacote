@@ -65,6 +65,15 @@ function getEvents(html) {
 	return events;
 }
 
+function show(show) {
+	if(show != undefined) {
+		nightmare.options.show = show;
+	}
+
+	return nightmare.options.show;
+}
+
 module.exports = {
 	getPackage: getPackage
+	, show: show
 };
