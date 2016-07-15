@@ -20,7 +20,7 @@ function getPackage(packageCode, callback) {
 		})
 		.wait('.ctrlcontent')
 		.evaluate(function() {
-			if($("button:contains('Nova Consulta')").length < 0) {
+			if($("button:contains('Nova Consulta')").length == 0) {
 				return {
 					'status' : 'ERROR',
 					'message' : 'Código inválido'
@@ -31,7 +31,6 @@ function getPackage(packageCode, callback) {
 		})
 	    .end()
 	    .then(function(result) {
-
 	    	var result = result;
 	    	if(result['status'] != 'ERROR')
 	    		result = getEvents(result);
