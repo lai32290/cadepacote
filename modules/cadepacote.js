@@ -76,8 +76,3 @@ module.exports = function() {
 		return events;
 	}
 }
-
-// module.exports = {
-// 	getPackage: getPackage
-// 	, show: show
-// };
