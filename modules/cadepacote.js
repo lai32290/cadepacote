@@ -5,11 +5,10 @@ var cheerio = require('cheerio')
 	;
 
 module.exports = function() {
-	var nightmare = Nightmare({show: false});
 
 	var correiosURL = 'http://www2.correios.com.br/sistemas/rastreamento/default.cfm';
 	var self = this;
-
+	var nightmare = Nightmare({show: self.showWindow});
 	self.getPackage = function(packageCode, callback) {
 		nightmare
 			.goto(correiosURL)
