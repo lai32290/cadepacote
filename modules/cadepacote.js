@@ -6,6 +6,7 @@ var cheerio = require('cheerio')
 
 module.exports = function() {
 
+	// var code = PJ991419267BR;PJ991419267BR
 	var correiosURL = 'http://www2.correios.com.br/sistemas/rastreamento/default.cfm';
 	var self = this;
 	var nightmare = Nightmare({show: self.showWindow});
